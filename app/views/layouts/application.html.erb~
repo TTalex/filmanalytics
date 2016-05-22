@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Outtoday</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<div id="all">
+<div id="header">
+<% if current_user %> 
+<%= current_user.username %>
+<%= button_to "Log out", logout_path, method: "delete" %>
+<% else %> 
+<%= form_for(:session, url: login_path) do |f| %> 
+  <%= f.text_field :username, :placeholder => "Username" %> 
+  <%= f.password_field :password, :placeholder => "Password" %> 
+  <%= f.submit "Log in", class: "btn-submit" %>
+<% end %>
+<%= button_to "Signup", 'signup', method: :get, class: "btn-signup" %>
+<% end %>
+</div>
+<div id="main">
+<%= yield %>
+</div>
+</div>
+
+
+</body>
+</html>

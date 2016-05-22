@@ -1,0 +1,44 @@
+#main{
+	position: relative;
+}
+body {
+    text-align: center;
+    background: lightgrey;
+}
+.film { 
+    width: 40%;
+    min-width: 300px;
+    height: 15em;
+    float: left;
+    text-align: center; 
+    margin: 2%;
+}
+.film #title{ 
+    font-size: 20px; 
+}
+.film #released{ 
+    font-size: 10px; 
+    color: grey;
+}
+.film #poster { 
+    float: left; 
+    width: 20%; 
+}
+.film #info { 
+    float: left;
+    width: 80%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.film #plot { 
+    text-align: left;
+    overflow:hidden;
+    margin: 5px;
+}
+img {
+    width: 75%;
+}
+.names{
+    font-size: 12px;
+}
